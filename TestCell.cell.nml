@@ -1,0 +1,34 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.1.xsd" id="TestCell">
+    <include href="NaTs.channel.nml"/>
+    <include href="K_T.channel.nml"/>
+    <include href="NMLCH001471.channel.nml"/>
+    <cell id="novel_cell">
+        <morphology id="morphology">
+            <segment id="0" name="Seg0">
+                <proximal x="0.0" y="0.0" z="0.0" diameter="17.841242"/>
+                <distal x="0.0" y="0.0" z="0.0" diameter="17.841242"/>
+            </segment>
+            <segmentGroup id="soma_group" neuroLexId="GO:0043025">
+                <notes>Default soma segment group for the cell</notes>
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup id="all">
+                <notes>Default segment group for all segments in the cell</notes>
+                <member segment="0"/>
+            </segmentGroup>
+        </morphology>
+        <biophysicalProperties id="biophys">
+            <membraneProperties>
+                <channelDensity id="NaTs_chans" ionChannel="NaTs" condDensity="150 mS_per_cm2" erev="50 mV" ion="non_specific"/>
+                <channelDensity id="K_T_chans" ionChannel="K_T" condDensity="36 mS_per_cm2" erev="-77 mV" ion="non_specific"/>
+                <channelDensity id="pas_chans" ionChannel="pas" condDensity="0.3 mS_per_cm2" erev="-65 mV" ion="non_specific"/>
+                <spikeThresh value="0mV"/>
+                <specificCapacitance value="1.0 uF_per_cm2"/>
+                <initMembPotential value="-65mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="0.03 kohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+</neuroml>
